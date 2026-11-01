@@ -144,6 +144,39 @@ If deploying with a free personal Apple ID:
 
 ---
 
+## 🔬 Recompilation Pipeline & Reproducibility
+
+The source code in `recomp/` is not handwritten code or opaque binary blobs; it is the direct output of a deterministic binary lifting and static recompilation pipeline located in `tools/`:
+
+1. **Disassembly & Analysis:** `tools/disasm/` decodes the original 32-bit x86 PE binaries (`game.exe` v1.006 and `gamemd.exe` v1.001), reconstructing basic blocks, control flow graphs (CFGs), function prologues/epilogues, and jump tables.
+2. **Deterministic AOT Lifting:** `tools/lift/` translates each x86 instruction sequence into semantically equivalent ANSI C routines, preserving Westwood's register conventions and virtual memory layout.
+3. **Dispatch & Linkage:** `tools/run_lift.py` generates the function tables (`recomp_dispatch.c`) and symbol headers (`recomp_target.h`) that interface directly with our Win32 HLE runtime (`src/win32hle/`).
+4. **Reproducing the Lift:**
+   The pre-lifted C files are already committed to `recomp/` so you do not need to install reverse-engineering dependencies just to build and play. However, if you wish to re-generate the C sources from scratch:
+   ```bash
+   pip3 install capstone
+   python3 setup.py --lift
+   ```
+
+---
+
+## 🚦 Known Status & Roadmap
+
+| Feature / Subsystem | Status | Notes |
+|---|---|---|
+| **Single-Player Campaigns** | ✅ Fully Working | Both Allied & Soviet campaigns (RA2 & Yuri's Revenge) playable from start to finish. |
+| **Skirmish Mode** | ✅ Fully Working | Full AI battles, custom maps (`.mmx`, `.yro`), rules, and game speed adjustments. |
+| **Audio & FMV Movies** | ✅ Fully Working | Hardware Bink video decoding and Westwood audio streaming at full fidelity. |
+| **Touch Controls & HUD** | ✅ Fully Working | Tactical radar sidebar, unit grouping gestures, pan/zoom, and on-screen keyboard. |
+| **iPadOS Experience** | ✅ Excellent | Tested and optimized for iPad screens (60 FPS, widescreen viewport). |
+| **iPhone Experience** | ⚠️ Playable | Functional, but UI density and sidebar scaling are currently tuned primarily for tablets. |
+| **LAN / Online Multiplayer** | ⏳ In Progress | Classic IPX/Winsock protocols need modern UDP/NAT traversal adaptation. |
+| **Mod Support (.mix injection)**| 🟡 Experimental | Custom game rules and maps load; advanced DLL-based mods (Ares/NPatch) require manual hooks. |
+
+Found a bug or have a suggestion? Please check the list above and open an issue in the tracker!
+
+---
+
 ## ❓ Frequently Asked Questions (FAQ)
 
 #### Does this require a paid Apple Developer account?

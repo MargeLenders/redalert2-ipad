@@ -1,0 +1,29 @@
+MIT License
+
+Copyright (c) 2026 MargeLenders
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+### Intellectual Property & Third-Party Notices
+
+- This license applies solely to the original port source code, touch abstraction layer, build automation, and adaptation scripts authored for this repository.
+- **Command & Conquer, Red Alert, Yuri's Revenge, Westwood Studios, and associated assets** are trademarks or registered trademarks of Electronic Arts Inc.
+- No proprietary game assets (including graphics, audio, movies, levels, scripts, and original compiled binaries) are included in or licensed under this repository. Game assets must be provided by the user from legally acquired retail copies (e.g. Steam).
