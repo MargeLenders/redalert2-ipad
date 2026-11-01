@@ -1,0 +1,14 @@
+prefix=/Volumes/Compartido/Developer/RA2/deps/installed-ios-sim
+exec_prefix=${prefix}
+libdir=/Volumes/Compartido/Developer/RA2/deps/installed-ios-sim/lib
+includedir=/Volumes/Compartido/Developer/RA2/deps/installed-ios-sim/include
+
+Name: libswresample
+Description: FFmpeg audio resampling library
+Version: 5.3.100
+Requires: libavutil >= 59.39.100
+Requires.private: 
+Conflicts:
+Libs: -L${libdir}  -lswresample -lm
+Libs.private: 
+Cflags: -I${includedir}

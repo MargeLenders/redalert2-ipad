@@ -1,0 +1,6 @@
+{
+  "team_id": "",
+  "bundle_id_prefix": "com.ra2port",
+  "platform": "ios-arm64",
+  "ra2_files_path": "ra2-files"
+}

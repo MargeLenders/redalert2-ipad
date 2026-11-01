@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+*.swp
+*~
+
+# Build artifacts & CMake generated projects
+build-*/
+build/
+*.build/
+*.ipa
+*.dSYM/
+DerivedData/
+
+# Xcode user state
+xcuserdata/
+*.xcuserdatad
+*.xcuserstate
+
+# Original game assets (proprietary Steam/EA assets)
+ra2-files/
+
+# Temporary disasm/lifting analysis data
+work/
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+
+# Compiled object files
+*.o
